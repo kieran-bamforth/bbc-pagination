@@ -2,16 +2,49 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sports Pagination Test</title>
+        <title>BBC Pagination Test</title>
 		<link type="text/css" rel="stylesheet" href="css/screen.css" />
     </head>
     <body>
+	
 		<!-- The page's content (view) -->
-
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <header></header>
+			<section id="news-ticker">
+				<section id="news-ticker-item"></section>
+				<section id="news-ticker-nav"></section>
+			</section>
+		<footer></footer>
 		
-		<!-- The page's behaviour (controller) -->
-		<script type="text/javascript" src="js/main.js"></script>
+		<!-- Require the JavaScript modules! -->
+		<script type="text/javascript" src="js/vendor/requirejs.js"></script>
+		<script type="text/javascript" >
+		  require.config({
+			baseUrl: "js/",
+			waitSeconds: 15,
+			paths: 
+			{
+				jsonloader: 'modules/JSONLoader',
+				newstickeritem: 'modules/NewsTickerItem',
+				newsticker: 'modules/NewsTicker',
+				newstickertemplate: 'templates/NewsTickerTemplate',
+				handlebars: 'vendor/handlebars',
+				main: 'main'
+			},
+			shim: 
+			{
+				handlebars: 
+				{
+					exports: 'Handlebars'
+				},
+				newstickertemplate:
+				{
+					deps: ['handlebars']
+				}
+			}
+		  });
+		  requirejs(['jsonloader', 'newstickeritem', 'newsticker', 'newstickertemplate', 'handlebars', 'main'], 
+			function(jsonloader,  newstickeritem, newsticker, newstickertemplate, handlebars, main){});
+		</script>
 		
     </body>
 </html>
