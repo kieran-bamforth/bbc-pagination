@@ -1,11 +1,13 @@
-define(['newstickertemplate', 'handlebars'], 
-	function(newstickertemplate, handlebars) 
+define(['newstickertemplate', 'handlebars'],
+	function(newstickertemplate, handlebars)
 {
-	return function() 
+	var newsTickerID = -1;
+
+	return function()
 	{
+		newsTickerID++;
 		return {
-			activeLink: 0,
-			maxLinkCount: 0, 
+			maxLinkCount: 0,
 			previousLinkText: "previous",
 			nextLinkText: "next",
 			previousLinkIcon: "prev-icon",
@@ -13,24 +15,61 @@ define(['newstickertemplate', 'handlebars'],
 			previousLinkPosition: 0,
 			nextLinkPosition: 1,
 			truncationCharacter: "...",
-			truncationLinkCountInner: 2, 
+			truncationLinkCountInner: 2,
 			truncationLinkCountOuter: 2,
-			truncationMinimimHiddenLinkCount: 2, 
+			truncationMinimimHiddenLinkCount: 2,
 			linksPosition: 1,
+
+			id: newsTickerID,
+			DOMElement: null,
 			items: new Array(),
+			links: null,
+			currentItemIndex: 0,
+
 			addItem: function(item)
 			{
 				this.items.push(item);
 			},
 			buildNewsTicker: function(DOMElement)
 			{
+				// Create pagination device DOMElement.
 				handlebars.registerHelper('indexNumber', function(index) {
 					return index+=1;
 				});
 				DOMElement.innerHTML = handlebars.templates.NewsTickerTemplate({sender:this});
+				this.DOMElement = document.getElementById("ntpd"+this.id);
+
+				// Assign behaviour when buttons in paginated devices are clicked
+				var newsTicker = this;
+				this.links = this.DOMElement.getElementsByClassName('link');
+				for(var link = 0; link < this.links.length; link++)
+				{
+					this.links[link].addEventListener('click', function(clickEvent)
+					{
+						var currentItemIndex = newsTicker.currentItemIndex,
+							nextItemIndex = this.getAttribute("data-indexnumber");
+						/* if current/nextItemIndex are the same, then the user has clicked
+							on the same story that is already displaying. Abort! */
+							if(currentItemIndex == nextItemIndex) return false;
+						var currentItem = newsTicker.items[currentItemIndex],
+							nextItem = newsTicker.items[nextItemIndex];
+
+						if(newsTicker.paginatedButtonWasClicked(currentItem, nextItem, newsTicker, clickEvent))
+						{
+							newsTicker.currentItemIndex = nextItemIndex;
+							for(var link = 0; link < newsTicker.links.length; link++)
+								 newsTicker.links[link].className = "link";
+							this.className = "link selected";
+						}
+					});
+				}
 			},
-			paginatedButtonWasClicked: function(prevItem, nextItem, sender)
+			/* Occurs when a paginated button is clicked.
+				This function should return true to allow navigation to the next item,
+				or return false to cancel it and remain on the current item. */
+			paginatedButtonWasClicked: function(currentItem, nextItem, sender, clickEvent)
 			{
+				return true;
 			}
 		}
 	}

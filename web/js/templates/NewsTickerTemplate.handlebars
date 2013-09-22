@@ -1,8 +1,8 @@
-<section class="news-ticker-pagination-device">
+<section class="news-ticker-pagination-device" id="ntpd{{sender.id}}">
 	<ul class="inline-list">
 		<li class="previous"><span class="previous-icon"></span>{{sender.previousLinkText}}</li>
 		{{#each sender.items}}
-			<li class="link">{{indexNumber @index}}</li>
+			<li class="link" data-indexnumber="{{@index}}">{{indexNumber @index}}</li>
 		{{/each}}
 		<li class="next"><span class="next-icon"></span>{{sender.nextLinkText}}</li>
 	</ul>
