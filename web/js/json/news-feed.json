@@ -13,6 +13,13 @@
         {
             "headline": "A spider feared extinct in the UK has been photographed for the first time after new colony found",
             "prompt": "LATEST",
+            "url": "news/world-africa-24193059",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+	{
+            "headline": "Nairobi Westgate attack: Uhuru Kenyatta praises unity",
+            "prompt": "LATEST",
             "url": "/news/uk-england-11806723",
             "isLive": "true",
             "isBreaking": "false"
