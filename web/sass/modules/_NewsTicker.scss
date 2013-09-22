@@ -1,0 +1,16 @@
+$newsTickerHeight: 22px;
+
+.news-ticker-pagination-device
+{
+	height: $newsTickerHeight;
+	line-height: $newsTickerHeight;
+
+	ul
+	{
+		li.link
+		{
+			width: 22px;
+			text-align: center;
+		}
+	}
+}

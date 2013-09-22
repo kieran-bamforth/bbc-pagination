@@ -1,0 +1,45 @@
+/* Defines the common elements and states for this website. */
+
+$linkColour: #000;
+$linkColourBackground: #e4e4e4;
+$linkHoverColour: #fff;
+$linkHoverColourBackground: #ee8a41;
+$linkSelectedColour:#fff;
+$linkSelectedColourBackground:#000;
+
+.link,
+{
+	color: $linkColour;
+	background: $linkColourBackground;
+	cursor: pointer;
+	&:hover
+	{
+		color: $linkHoverColour;
+		background: $linkHoverColourBackground;
+	}
+}
+
+.selected
+{
+	color: $linkSelectedColour;
+	background:$linkSelectedColourBackground;
+	cursor: default;
+	&:hover
+	{
+		background: $linkSelectedColourBackground;
+	}
+}
+
+.disabled
+{
+	color: $linkColourBackground;
+}
+
+.inline-list
+{
+	list-style: none;
+	li
+	{
+		display: inline-block
+	}
+}

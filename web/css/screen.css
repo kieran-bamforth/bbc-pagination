@@ -67,7 +67,51 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 2, ../sass/vendor/_normalize.scss */
-.porn {
-  color: #f00;
+/* Defines the common elements and states for this website. */
+/* line 11, ../sass/modules/_Common.scss */
+.link {
+  color: black;
+  background: #e4e4e4;
+  cursor: pointer;
+}
+/* line 16, ../sass/modules/_Common.scss */
+.link:hover {
+  color: white;
+  background: #ee8a41;
+}
+
+/* line 23, ../sass/modules/_Common.scss */
+.selected {
+  color: white;
+  background: black;
+  cursor: default;
+}
+/* line 28, ../sass/modules/_Common.scss */
+.selected:hover {
+  background: black;
+}
+
+/* line 34, ../sass/modules/_Common.scss */
+.disabled {
+  color: #e4e4e4;
+}
+
+/* line 39, ../sass/modules/_Common.scss */
+.inline-list {
+  list-style: none;
+}
+/* line 42, ../sass/modules/_Common.scss */
+.inline-list li {
+  display: inline-block;
+}
+
+/* line 4, ../sass/modules/_NewsTicker.scss */
+.news-ticker-pagination-device {
+  height: 22px;
+  line-height: 22px;
+}
+/* line 11, ../sass/modules/_NewsTicker.scss */
+.news-ticker-pagination-device ul li.link {
+  width: 22px;
+  text-align: center;
 }

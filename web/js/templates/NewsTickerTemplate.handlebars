@@ -1,7 +1,9 @@
-<ul class="news-ticker-pagination-device">
-	<li class="previous"><span class="previous-icon"></span>{{sender.previousLinkText}}</li>
-	{{#each sender.items}}
-		<li>{{indexNumber @index}}</li>
-	{{/each}}
-	<li class="next"><span class="next-icon"></span>{{sender.nextLinkText}}</li>
-</ul>
+<section class="news-ticker-pagination-device">
+	<ul class="inline-list">
+		<li class="previous"><span class="previous-icon"></span>{{sender.previousLinkText}}</li>
+		{{#each sender.items}}
+			<li class="link">{{indexNumber @index}}</li>
+		{{/each}}
+		<li class="next"><span class="next-icon"></span>{{sender.nextLinkText}}</li>
+	</ul>
+</section>
