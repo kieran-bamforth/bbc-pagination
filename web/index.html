@@ -10,7 +10,7 @@
 		<!-- The page's content (view) -->
         <header></header>
 			<section id="news-ticker">
-				<article id="news-ticker-item"></article>
+				<section id="news-ticker-item"></section>
 				<section id="news-ticker-nav"></section>
 			</section>
 		<footer></footer>
@@ -25,6 +25,7 @@
 			{
 				jsonloader: 'modules/JSONLoader',
 				newstickeritem: 'modules/NewsTickerItem',
+				newstickeritemtemplate: 'templates/NewsTickerItemTemplate',
 				newsticker: 'modules/NewsTicker',
 				newstickertemplate: 'templates/NewsTickerTemplate',
 				handlebars: 'vendor/handlebars',
@@ -36,14 +37,18 @@
 				{
 					exports: 'Handlebars'
 				},
+				newstickeritemtemplate:
+				{
+					deps: ['handlebars']
+				},
 				newstickertemplate:
 				{
 					deps: ['handlebars']
 				}
 			}
 		  });
-		  requirejs(['jsonloader', 'newstickeritem', 'newsticker', 'newstickertemplate', 'handlebars', 'main'], 
-			function(jsonloader,  newstickeritem, newsticker, newstickertemplate, handlebars, main){});
+		  requirejs(['jsonloader', 'newstickeritem', 'newstickeritemtemplate', 'newsticker', 'newstickertemplate', 'handlebars', 'main'], 
+			function(jsonloader,  newstickeritem, newstickeritemtemplate, newsticker, newstickertemplate, handlebars, main){});
 		</script>
 		
     </body>

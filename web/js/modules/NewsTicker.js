@@ -33,6 +33,11 @@ define(['newstickertemplate', 'handlebars'],
 			buildNewsTicker: function(DOMElement)
 			{
 				// Create pagination device DOMElement.
+				handlebars.registerHelper('firstIteration', function(options, context) {
+					if(options == 0)
+						return context.fn(this);
+					return '';
+				});
 				handlebars.registerHelper('indexNumber', function(index) {
 					return index+=1;
 				});
@@ -50,13 +55,19 @@ define(['newstickertemplate', 'handlebars'],
 							nextItemIndex = this.getAttribute("data-indexnumber");
 						/* if current/nextItemIndex are the same, then the user has clicked
 							on the same story that is already displaying. Abort! */
-							if(currentItemIndex == nextItemIndex) return false;
+						if(currentItemIndex == nextItemIndex) return false;
 						var currentItem = newsTicker.items[currentItemIndex],
 							nextItem = newsTicker.items[nextItemIndex];
 
 						if(newsTicker.paginatedButtonWasClicked(currentItem, nextItem, newsTicker, clickEvent))
 						{
+							// Set current story.
 							newsTicker.currentItemIndex = nextItemIndex;
+							// Set CSS classes for prev / next then links.
+							var prevLink = newsTicker.DOMElement.getElementsByClassName('previous')[0],
+								newLink = newsTicker.DOMElement.getElementsByClassName('next')[0];
+							prevLink.className = "previous"+((nextItemIndex == 0)? " disabled" : "");
+							newLink.className = "next"+((nextItemIndex == newsTicker.links.length-1)? " disabled" : "");
 							for(var link = 0; link < newsTicker.links.length; link++)
 								 newsTicker.links[link].className = "link";
 							this.className = "link selected";

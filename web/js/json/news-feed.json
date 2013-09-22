@@ -7,14 +7,14 @@
             "headline": "Operation under way to rescue 28 workers trapped at flooded coal mine in south-west China",
             "prompt": "LATEST",
             "url": "/news/world-asia-pacific-11808378",
-            "isLive": "false",
+            "isLive": "true",
             "isBreaking": "false"
         },
         {
             "headline": "A spider feared extinct in the UK has been photographed for the first time after new colony found",
             "prompt": "LATEST",
             "url": "/news/uk-england-11806723",
-            "isLive": "false",
+            "isLive": "true",
             "isBreaking": "false"
         },
         {
@@ -22,14 +22,14 @@
             "prompt": "LATEST",
             "url": "/news/health-11800017",
             "isLive": "false",
-            "isBreaking": "false"
+            "isBreaking": "true"
         },
         {
             "headline": "Japan's justice minister resigns after causing outrage by saying his job was easy",
             "prompt": "LATEST",
             "url": "/news/world-asia-pacific-11808242",
-            "isLive": "false",
-            "isBreaking": "false"
+            "isLive": "true",
+            "isBreaking": "true"
         },
         {
             "headline": "Saudi school lessons in UK concern government",
