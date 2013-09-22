@@ -17,11 +17,17 @@ define(['newstickertemplate', 'handlebars'],
 			truncationLinkCountOuter: 2,
 			truncationMinimimHiddenLinkCount: 2, 
 			linksPosition: 1,
+			items: new Array(),
 			addItem: function(item)
 			{
+				this.items.push(item);
 			},
 			buildNewsTicker: function(DOMElement)
 			{
+				handlebars.registerHelper('indexNumber', function(index) {
+					return index+=1;
+				});
+				DOMElement.innerHTML = handlebars.templates.NewsTickerTemplate({sender:this});
 			},
 			paginatedButtonWasClicked: function(prevItem, nextItem, sender)
 			{

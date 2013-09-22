@@ -1,2 +1,5 @@
+.DS_Store
 docs/*
 analysis-design/~$object-analysis.xlsx
+web/.sass-cache
+web/.DS_Store

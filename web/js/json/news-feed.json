@@ -1,0 +1,84 @@
+{
+    "name": "ticker",
+    "version": "0.1",
+    "published": "",
+    "entries": [
+        {
+            "headline": "Operation under way to rescue 28 workers trapped at flooded coal mine in south-west China",
+            "prompt": "LATEST",
+            "url": "/news/world-asia-pacific-11808378",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "A spider feared extinct in the UK has been photographed for the first time after new colony found",
+            "prompt": "LATEST",
+            "url": "/news/uk-england-11806723",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Many depictions of mental illness on TV are frightening and misleading, a report says",
+            "prompt": "LATEST",
+            "url": "/news/health-11800017",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Japan's justice minister resigns after causing outrage by saying his job was easy",
+            "prompt": "LATEST",
+            "url": "/news/world-asia-pacific-11808242",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Saudi school lessons in UK concern government",
+            "prompt": "LATEST",
+            "url": "/news/uk-11799713",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Kabul 'safer for children than many Western cities'",
+            "prompt": "LATEST",
+            "url": "/news/uk-11807382",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Obama wins key backing on Syria plan",
+            "prompt": "LATEST",
+            "url": "news/world-middle-east-23950253",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Lloyds boss promises 'seamless' launch of TSB",
+            "prompt": "LATEST",
+            "url": "news/business-23941725",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Android KitKat unveiled in Google surprise move",
+            "prompt": "LATEST",
+            "url": "news/technology-23926938",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "How does a skyscraper melt a car",
+            "prompt": "LATEST",
+            "url": "news/magazine-23944679",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Promoted tweet used to complain about British Airways",
+            "prompt": "LATEST",
+            "url": "news/technology-23943480",
+            "isLive": "false",
+            "isBreaking": "false"
+        }
+    ]
+}

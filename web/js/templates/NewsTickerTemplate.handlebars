@@ -1,2 +1,7 @@
-<div class="i-r-ticker">
-</div>
+<ul class="news-ticker-pagination-device">
+	<li class="previous"><span class="previous-icon"></span>{{sender.previousLinkText}}</li>
+	{{#each sender.items}}
+		<li>{{indexNumber @index}}</li>
+	{{/each}}
+	<li class="next"><span class="next-icon"></span>{{sender.nextLinkText}}</li>
+</ul>
