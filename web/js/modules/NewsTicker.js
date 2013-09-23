@@ -77,6 +77,7 @@ define(['newstickertemplate', 'handlebars'],
 						}
 					});
 				}
+				this.paginate();
 			},
 			paginate: function()
 			{
