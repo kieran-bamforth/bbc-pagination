@@ -126,6 +126,8 @@ define(['newstickertemplate', 'handlebars'],
 					for(var i = 0; i < this.links.length; i++)
 					{
 						var cssStyle = (output.indexOf(this.links[i]) != -1) ? "link" : "link hidden";
+						if(i == this.currentItemIndex && cssStyle == "link")
+							cssStyle = "link selected";
 						this.links[i].className = cssStyle;
 					}
 				}
