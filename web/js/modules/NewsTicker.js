@@ -14,7 +14,7 @@ define(['newstickertemplate', 'handlebars'],
 			nextLinkIcon: "next-icon",
 			previousLinkPosition: 0,
 			nextLinkPosition: 1,
-			truncationCharacter: "...", // The character used to hide items in pagination. 
+			truncationCharacter: "...", // The character used to hide items in pagination.
 			truncationLinkCountInner: 2, // The amount of links to show on either side of the active item.
 			truncationLinkCountOuter: 2, // The amount of links to always show on the beginning and end of the paginated list.
 			truncationMinimimHiddenLinkCount: 2, // The amount of hidden links required to show the truncation character.
@@ -47,7 +47,7 @@ define(['newstickertemplate', 'handlebars'],
 				// Assign behaviour when buttons in paginated devices are clicked
 				var newsTicker = this;
 				this.links = this.DOMElement.getElementsByClassName('link');
-				
+
 				for(var link = 0; link < this.links.length; link++)
 				{
 					this.links[link].addEventListener('click', function(clickEvent)
@@ -81,36 +81,45 @@ define(['newstickertemplate', 'handlebars'],
 			paginate: function()
 			{
 				/* For pagination to be successful there needs to be enough links to vouch for
-					the need of pagination, i.e there should be enough items to require at least 
+					the need of pagination, i.e there should be enough items to require at least
 					one set of ellipses - therefore we need to create a boundary. */
 				var currentItemIndex = parseInt(this.currentItemIndex)+1;
 				var boundary = this.truncationLinkCountOuter + this.truncationMinimimHiddenLinkCount + this.truncationLinkCountInner + 1;
 				var minimumAmountOfLinksRequiredForPagination = boundary + this.truncationLinkCountInner + this.truncationLinkCountOuter;
 				if(this.links.length >= minimumAmountOfLinksRequiredForPagination)
 				{
-					var output = Array(this.links[0], this.links[1]); // The indexes of the items that will be visible. -1 means elipsis.
-					
+					var output = new Array();
+
 					/* Okay we made it here so begin paginating. If the current link is inside the lower
 						 or upper boundary, we only need to generate one set of ellipsis. */
+					// lower boundary.
 					if(currentItemIndex < boundary)
 					{
-						for(var i=this.truncationLinkCountOuter; i<boundary; i++)
+						for(var i = 0; i < boundary; i++)
 							output.push(this.links[i]);
-						output.push(-1);
+						for(var i = this.truncationLinkCountInner; i > 0; i--)
+							output.push(this.links[this.links.length-i]);
 					}
-					else if(currentItemIndex > (this.links.length+1-boundary))
+					// middle boundary
+					else if(currentItemIndex >= boundary && currentItemIndex <= this.links.length - (boundary-1))
 					{
-						output.push(-1);
-						// The links
+						for(var i = 0; i < this.truncationLinkCountInner; i++)
+							output.push(this.links[i]);
+						for(var i = (currentItemIndex - this.truncationLinkCountInner)-1;
+							i < currentItemIndex + this.truncationLinkCountInner;
+							i++)
+								output.push(this.links[i]);
+						for(var i = this.truncationLinkCountInner; i > 0; i--)
+							output.push(this.links[this.links.length-i]);
 					}
-					// If we make it here, we need 2 sets of ellipses. 
+					// upper boundary.
 					else
 					{
-						output.push(-1);
-						// The links
-						output.push(-1);
+						for(var i = 0; i < this.truncationLinkCountInner; i++)
+							output.push(this.links[i]);
+						for(var i = this.links.length - boundary; i < this.links.length; i++)
+							output.push(this.links[i]);
 					}
-					output.push(this.links[this.links.length-2], this.links[this.links.length-1]);
 				}
 			},
 			/* Occurs when a paginated button is clicked.

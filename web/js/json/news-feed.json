@@ -55,14 +55,28 @@
         {
             "headline": "Obama wins key backing on Syria plan",
             "prompt": "LATEST",
-            "url": "news/world-middle-east-23950253",
+            "url": "/news/world-middle-east-23950253",
             "isLive": "false",
             "isBreaking": "false"
         },
         {
             "headline": "Lloyds boss promises 'seamless' launch of TSB",
             "prompt": "LATEST",
-            "url": "news/business-23941725",
+            "url": "/news/business-23941725",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "Kenya forces 'clearing' Nairobi mall",
+            "prompt": "LATEST",
+            "url": "news/world-africa-24206913",
+            "isLive": "false",
+            "isBreaking": "false"
+        },
+        {
+            "headline": "The lives of those lost in Westgate mall attack",
+            "prompt": "LATEST",
+            "url": "news/world-africa-24213735",
             "isLive": "false",
             "isBreaking": "false"
         },
