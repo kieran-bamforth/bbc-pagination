@@ -12,5 +12,9 @@ $newsTickerHeight: 22px;
 			width: 22px;
 			text-align: center;
 		}
+		li.hidden
+		{
+			visibility: hidden;
+		}
 	}
 }

@@ -35,6 +35,11 @@ $linkSelectedColourBackground:#000;
 	color: $linkColourBackground;
 }
 
+.hidden
+{
+	visibility: hidden;
+}
+
 .inline-list
 {
 	list-style: none;

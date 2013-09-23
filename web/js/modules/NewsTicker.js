@@ -120,6 +120,13 @@ define(['newstickertemplate', 'handlebars'],
 						for(var i = this.links.length - boundary; i < this.links.length; i++)
 							output.push(this.links[i]);
 					}
+
+					// Now that we have the links to display, apply the relevant CSS classes.
+					for(var i = 0; i < this.links.length; i++)
+					{
+						var cssStyle = (output.indexOf(this.links[i]) != -1) ? "link" : "link hidden";
+						this.links[i].className = cssStyle;
+					}
 				}
 			},
 			/* Occurs when a paginated button is clicked.

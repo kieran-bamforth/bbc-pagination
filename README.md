@@ -1,9 +1,21 @@
-Repo for BBC pagination test.
+#BBC Pagination test
+Hosted online at [kieranbamforth.me](http://www.kieranbamforth.me/dev/web)
+##Overview of folders
+###Report
+This project was tackled using an object oriented approach to software, the report folder contains the UML diagrams and data-dictionary used throughout this process
+###Vendor
+JavaScript from different sources is placed in here. (Typically it's where I place my unit tests using a framework such as Jasmine)
+###Web\JS\modules
+Contains the meat of this project; the JavaScript classes I created to complete this test are placed in here.
+###Web\JS\templates
+I like to separate HTML presentation from my JavaScript - therefore Handlebars was used to precompile the JavaScript functions that would be responsible for outputting HTML. 
+###Web\sass
+I prefer to write my CSS classes in an OO manner (OOCSS). The rules are placed in their respective modules, imported by SASS and then compiled to minified CSS found in the web/css folder.
+##TODO
+These tasks remain (If anything remains here, I ran out of time)1. Replace whitespace in between paginated links with ellipses
+2. Assign behaviour to the next / forward buttons
+3. Allow for arbritrary placement of next / forward buttons
+4. Allow for icons to be shown for next / forward buttons
+5. Update UML diagrams
+6. Write the report
 
-Hosted at http://kieranbamforth.me/dev/web/
-
-Todo:
-	- Finish Pagination function
-	- Add functionality to previous/next buttons
-	- Write up report
-	- Style it up!
